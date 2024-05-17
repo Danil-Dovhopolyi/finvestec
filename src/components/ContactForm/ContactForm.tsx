@@ -38,7 +38,7 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
         .required('Required'),
     }),
     onSubmit: async (values) => {
-      const API_KEY = 'pk_802e16ef126b4e690a78466b78b2a67b923e9d757f763ae7'; // Replace with your actual Plunk API key
+      const API_KEY = 'sk_89b4a310bb64ea8f2d7bee4c084e6acca74144d2d65f9ce7'; // Replace with your actual Plunk API key
 
       const emailHtml = render(<Email {...values} />);
 
