@@ -16,7 +16,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(({ children }, ref) => {
   };
 
   return (
-    <div className='tabs blur' ref={ref}>
+    <div ref={ref} className='tabs blur'>
       <h1 className='tabs-title'>Aktuelle Stellenangebote</h1>
       <div className='tab-buttons'>
         {React.Children.map(children, (child, index) => {

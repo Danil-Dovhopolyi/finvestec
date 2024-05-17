@@ -38,7 +38,10 @@ export const App = () => {
   const contactFormRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const whatWeOfferRef = useRef<HTMLDivElement>(null);
-  const TabsRef = useRef<HTMLDivElement>(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    console.log('Tabs ref:', tabsRef.current); // Log the ref to check if it is pointing to the correct element
+  }, [tabsRef]);
   const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -56,7 +59,7 @@ export const App = () => {
           scrollToContact={() => scrollToRef(contactFormRef)}
           scrollToAbout={() => scrollToRef(aboutRef)}
           scrollToWhatWeOffer={() => scrollToRef(whatWeOfferRef)}
-          scrollToTabs={() => scrollToRef(TabsRef)}
+          scrollToTabs={() => scrollToRef(tabsRef)}
           onMenuToggle={handleMenuToggle}
         />
         <div className='dots dots-title'></div>
@@ -81,7 +84,7 @@ export const App = () => {
         <WhatWeOffer ref={whatWeOfferRef} />
         <div className='dots contacts-dots'></div>
         <Contacts scrollToRef={() => scrollToRef(contactFormRef)} />
-        <Tabs ref={TabsRef}>
+        <Tabs ref={tabsRef}>
           {tabData.map((tab: TabContent, index: number) => (
             <Tab title={tab.title} key={index}>
               <div className='content-wrap'>
