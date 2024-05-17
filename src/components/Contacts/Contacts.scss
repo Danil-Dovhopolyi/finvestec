@@ -1,0 +1,47 @@
+.contacts{
+  max-width: 1254px;
+  margin-bottom: 240px;
+}
+
+.cards-container-contacts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.contacts-title{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67.2px;
+  text-wrap: nowrap;
+  margin-right: 80px;
+  color: #2A2A47;
+}
+
+.container{
+  display: flex;
+}
+
+@media (width <= 992px){
+  .container{
+    display: block;
+  }
+
+  .cards-container-contacts{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 480px){
+.contacts-title{
+  margin-bottom:1.7rem;
+}
+
+  .contacts{
+    margin-bottom:7.5rem;
+  }
+}
+
+
+
+

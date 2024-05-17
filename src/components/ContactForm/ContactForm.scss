@@ -1,0 +1,152 @@
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  background: #F7F8FA26;
+  border-radius: 2.5rem;
+  padding: 3rem 2.5rem;
+  max-width: 996px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-wrapper{
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.checkbox-group {
+  display: flex;
+}
+
+.button-group {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  color: #06062C;
+  margin-bottom: .5rem;
+}
+
+input,
+textarea {
+  background: #F3F3F3;
+  border-radius: 3rem;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #eeeeee;
+  border: 3px solid #00004A;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  transition: background-color 0.2s;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: #00004A;
+  border: 2px solid #eeeeee;
+
+}
+
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
+
+.custom-checkbox .checkmark::after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+textarea {
+  height: 100px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3rem;
+  background: white;
+  color: rgba(0, 0, 74, 1);
+  font-size: 18px;
+  line-height: 21.94px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-title{
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 67.2px;
+  text-align: center;
+  color: #2A2A47;
+  margin-bottom: 42px;
+}
+
+@media (width <= 992px) {
+ .contact-form{
+   margin-bottom: 7.6rem;
+ }
+
+}
+
+@media (width <= 480px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

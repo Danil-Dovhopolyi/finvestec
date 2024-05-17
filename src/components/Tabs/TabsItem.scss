@@ -1,0 +1,29 @@
+.tab-title{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #06062C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  border-bottom: 1px solid black;
+}
+
+.tab-title.active{
+  border:none;
+}
+
+.tab-content.active{
+  border-bottom: 1px solid black;
+}
+
+.arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.active {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,37 @@
+.tabs{
+  background: #FFFFFF26;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  margin: 0 auto 240px;
+  max-width: 1254px;
+  width: 100%;
+}
+
+.tabs.blur {
+  display: block;
+}
+
+
+.tabs-title{
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 57.6px;
+  text-align: center;
+  color: #06062C;
+  border-bottom: 1px solid black;
+  padding-bottom: 2.6rem;
+}
+
+@media (width <= 480px){
+  .tabs-title{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-align: center;
+  }
+
+  .tabs{
+    margin-bottom:7.5rem;
+  }
+
+}

@@ -1,0 +1,43 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-selector-bem-pattern"],
+  "rules": {
+    "block-no-empty": true,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind"]
+      }
+    ],
+    "no-duplicate-selectors": true,
+    "comment-no-empty": true,
+    "declaration-empty-line-before": null,
+    "no-empty-source": true,
+    "color-no-invalid-hex": true,
+    "unit-no-unknown": true,
+    "alpha-value-notation": "number",
+    "property-no-vendor-prefix": null,
+    "scss/no-dollar-variables": true,
+    "scss/no-duplicate-mixins": true,
+    "declaration-no-important": true,
+    "color-hex-length": "long",
+    "color-function-notation": "legacy",
+    "selector-class-pattern": null,
+    "custom-property-empty-line-before": null,
+    "custom-property-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "plugin/selector-bem-pattern": {
+      "preset": "bem",
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      }
+    },
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["deep"]
+      }
+    ]
+  }
+}

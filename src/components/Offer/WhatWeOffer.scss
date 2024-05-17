@@ -1,0 +1,44 @@
+.offer-title{
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 67.2px;
+  margin-bottom: 42px;
+}
+
+.offer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1254px;
+  margin: 0 auto 280px;
+}
+
+
+
+.cards-container-offer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  
+}
+
+@media (width <= 480px) {
+  .offer-title{
+    margin-bottom: 42px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38.4px;
+    text-align: center;
+  }
+
+  .cards-container-offer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .offer{
+    margin-bottom:2.9rem;
+  }
+}

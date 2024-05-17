@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(124.98deg, #c4c4ec 20.58%, #fce8da 97.57%) no-repeat;
+  font-family: Montserrat, sans-serif;
+}
+
+#root {
+  background-image: url('../../finvestec/src/images/Background.svg');
+  background-repeat: no-repeat;
+}
+
+.app {
+  padding: 120px;
+  font-size: 16px;
+}
+
+.dots {
+  background-image: url('../../finvestec/src/images/dots.svg');
+  position: absolute;
+  margin-top: -10px;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  z-index: 0;
+  background-size: cover;
+}
+
+.dots-title {
+  width: 100%;
+  margin-top: -125px;
+  z-index: -999;
+}
+
+.contacts-dots {
+  margin-top: 80px;
+  width: 450px;
+}
+
+.title-content {
+  max-width: 38.4rem;
+  font-size: 112px;
+  font-weight: 600;
+  line-height: 123.2px;
+  text-align: right;
+  margin-bottom: 14.1rem;
+}
+
+.introduction {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 15rem;
+}
+
+.introduction-content {
+  max-width: 38.4rem;
+
+  > div {
+    > span {
+      font-family: Roboto, sans-serif;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 36px;
+    }
+
+    > p {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 39px;
+    }
+  }
+}
+
+.introduction-title {
+  margin-bottom: 1.5rem;
+  color: rgba(72, 72, 85, 1);
+}
+
+.tab-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #31313c;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #06062c;
+  margin-bottom: 1.5rem;
+}
+
+.content-wrap {
+  padding: 1.5rem;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.paragraph-point {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.menu-open .title-content,
+.menu-open .tabs {
+  display: none;
+}
+
+@media (width <= 1400px) {
+  #root {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (width <= 768px) {
+  .app {
+    padding: 0 24px;
+  }
+
+  .title-content {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 76.8px;
+    margin-bottom: 2rem;
+    max-width: 20.5rem;
+  }
+
+  .introduction-content {
+    max-width: 38.4rem;
+
+    > div {
+      > span {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      > p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .dots-title {
+    display: none;
+  }
+}
+
+@media (width <= 480px) {
+  .introduction {
+    margin-bottom: 5.5rem;
+  }
+}
