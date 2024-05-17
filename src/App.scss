@@ -10,7 +10,7 @@ body {
 }
 
 #root {
-  background-image: url('../../finvestec/src/images/Background.svg');
+  background-image: url('./images/Background.svg');
   background-repeat: no-repeat;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .dots {
-  background-image: url('../../finvestec/src/images/dots.svg');
+  background-image: url('./images/dots.svg');
   position: absolute;
   margin-top: -10px;
   left: 0;
