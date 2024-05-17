@@ -5,10 +5,19 @@ import './Header.scss';
 
 interface HeaderProps {
   scrollToContact: () => void;
+  scrollToAbout: () => void;
+  scrollToWhatWeOffer: () => void;
+  scrollToTabs: () => void;
   onMenuToggle: (isMenuOpen: boolean) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ scrollToContact, onMenuToggle }) => {
+const Header: React.FC<HeaderProps> = ({
+  scrollToContact,
+  scrollToAbout,
+  scrollToWhatWeOffer,
+  scrollToTabs,
+  onMenuToggle,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -32,9 +41,9 @@ const Header: React.FC<HeaderProps> = ({ scrollToContact, onMenuToggle }) => {
         </div>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
           <ul>
-            <li>Über uns</li>
-            <li>Was wir bieten</li>
-            <li>Aktuelle Stellenangebote</li>
+            <li onClick={scrollToAbout}>Über uns</li>
+            <li onClick={scrollToWhatWeOffer}>Was wir bieten</li>
+            <li onClick={scrollToTabs}>Aktuelle Stellenangebote</li>
           </ul>
         </nav>
         <div className='kontakt'>

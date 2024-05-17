@@ -1,11 +1,13 @@
+import { forwardRef } from 'react';
+
 import Card from '@/components/Card/Card.tsx';
 import cardData from '@/components/Card/cardContent.ts';
 
 import './About.scss';
 
-function About() {
+const About = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
-    <div className='about'>
+    <div className='about' ref={ref}>
       <div className='about-title'>Über uns</div>
 
       <div className='cards-container-about'>
@@ -20,6 +22,6 @@ function About() {
       </div>
     </div>
   );
-}
+});
 
 export default About;

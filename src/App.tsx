@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import About from '@/components/About/About.tsx';
 import ContactForm from '@/components/ContactForm/ContactForm.tsx';
@@ -36,9 +36,12 @@ export const App = () => {
   };
 
   const contactFormRef = useRef<HTMLDivElement>(null);
-  const scrollToContact = () => {
-    if (contactFormRef.current) {
-      contactFormRef.current.scrollIntoView({ behavior: 'smooth' });
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const whatWeOfferRef = useRef<HTMLDivElement>(null);
+  const TabsRef = useRef<HTMLDivElement>(null);
+  const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -49,7 +52,13 @@ export const App = () => {
   return (
     <>
       <div className={`app ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Header scrollToContact={scrollToContact} onMenuToggle={handleMenuToggle} />
+        <Header
+          scrollToContact={() => scrollToRef(contactFormRef)}
+          scrollToAbout={() => scrollToRef(aboutRef)}
+          scrollToWhatWeOffer={() => scrollToRef(whatWeOfferRef)}
+          scrollToTabs={() => scrollToRef(TabsRef)}
+          onMenuToggle={handleMenuToggle}
+        />
         <div className='dots dots-title'></div>
         <div className='title'>
           <h1 className='title-content'>Cutting Edge SEO</h1>
@@ -67,12 +76,12 @@ export const App = () => {
             </div>
           </div>
         </div>
-        <About />
+        <About ref={aboutRef} />
         <div className='dots'></div>
-        <WhatWeOffer />
+        <WhatWeOffer ref={whatWeOfferRef} />
         <div className='dots contacts-dots'></div>
-        <Contacts scrollToContact={scrollToContact} />
-        <Tabs>
+        <Contacts scrollToRef={() => scrollToRef(contactFormRef)} />
+        <Tabs ref={TabsRef}>
           {tabData.map((tab: TabContent, index: number) => (
             <Tab title={tab.title} key={index}>
               <div className='content-wrap'>

@@ -5,14 +5,14 @@ import { CardContentStyle } from '../../types/types.ts';
 import './Contacts.scss';
 
 interface ContactsProps {
-  scrollToContact: () => void;
+  scrollToRef: () => void;
 }
-function Contacts({ scrollToContact }: ContactsProps) {
+
+function Contacts({ scrollToRef }: ContactsProps) {
   return (
     <div className='contacts'>
       <div className='container'>
         <div className='contacts-title'>Kontakt</div>
-
         <div className='cards-container-contacts'>
           {cardData.contact.map((card, cardIndex) => (
             <Card
@@ -21,7 +21,7 @@ function Contacts({ scrollToContact }: ContactsProps) {
               description={card.description}
               icon={card.icon}
               contentStyle={CardContentStyle.Centered}
-              onClick={card.title === 'Kontaktformular' ? scrollToContact : undefined}
+              onClick={card.title === 'Kontaktformular' ? scrollToRef : undefined}
             />
           ))}
         </div>

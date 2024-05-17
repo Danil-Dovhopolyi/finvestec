@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, forwardRef, useState } from 'react';
 
 import { TabProps } from '@/components/Tabs/TabsItem.tsx';
 
@@ -8,7 +8,7 @@ interface TabsProps {
   children: ReactNode;
 }
 
-function Tabs({ children }: TabsProps) {
+const Tabs = forwardRef<HTMLDivElement, TabsProps>(({ children }, ref) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleItemClick = (index: number) => {
@@ -16,7 +16,7 @@ function Tabs({ children }: TabsProps) {
   };
 
   return (
-    <div className='tabs blur'>
+    <div className='tabs blur' ref={ref}>
       <h1 className='tabs-title'>Aktuelle Stellenangebote</h1>
       <div className='tab-buttons'>
         {React.Children.map(children, (child, index) => {
@@ -31,5 +31,6 @@ function Tabs({ children }: TabsProps) {
       </div>
     </div>
   );
-}
+});
+
 export default Tabs;

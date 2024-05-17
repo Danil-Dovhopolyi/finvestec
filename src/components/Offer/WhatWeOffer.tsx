@@ -1,12 +1,14 @@
+import { forwardRef } from 'react';
+
 import Card from '@/components/Card/Card.tsx';
 import cardData from '@/components/Card/cardContent.ts';
 
 import { CardContentStyle } from '../../types/types.ts';
 import './WhatWeOffer.scss';
 
-function WhatWeOffer() {
+const WhatWeOffer = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
-    <div className='offer'>
+    <div className='offer' ref={ref}>
       <div className='offer-title'>Was wir bieten</div>
 
       <div className='cards-container-offer'>
@@ -22,6 +24,6 @@ function WhatWeOffer() {
       </div>
     </div>
   );
-}
+});
 
 export default WhatWeOffer;
