@@ -136,6 +136,10 @@ textarea:focus {
   margin-bottom: 42px;
 }
 
+.success-message{
+  grid-column: 1/3;
+}
+
 @media (width <= 992px) {
  .contact-form{
    margin-bottom: 7.6rem;

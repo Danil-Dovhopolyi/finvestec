@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { FormikProps, useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -18,6 +18,8 @@ interface FormValues {
 }
 
 const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
+  const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+
   const formik: FormikProps<FormValues> = useFormik<FormValues>({
     initialValues: {
       name: '',
@@ -38,7 +40,7 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
         .required('Required'),
     }),
     onSubmit: async (values) => {
-      const API_KEY = 'sk_89b4a310bb64ea8f2d7bee4c084e6acca74144d2d65f9ce7'; // Replace with your actual Plunk API key
+      const API_KEY: string = 'sk_89b4a310bb64ea8f2d7bee4c084e6acca74144d2d65f9ce7'; // Replace with your actual Plunk API key
 
       const emailHtml = render(<Email {...values} />);
 
@@ -50,19 +52,21 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
             Authorization: `Bearer ${API_KEY}`,
           },
           body: JSON.stringify({
-            to: 'ddo2102@gmail.com',
+            to: 'benjamin@finvestec-gmbh.de',
             subject: 'New Contact Request',
             body: emailHtml,
           }),
         });
 
         if (response.ok) {
-          alert('Email sent successfully!');
+          setIsSuccess(true);
         } else {
           console.error('Failed to send email', await response.json());
+          setIsSuccess(false);
         }
       } catch (error) {
         console.error('Error sending email', error);
+        setIsSuccess(false);
       }
     },
   });
@@ -173,6 +177,15 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
               Senden
             </button>
           </div>
+          {isSuccess === true && (
+            <div className='success-message'>
+              Ich bin mit den Bestimmungen zum{' '}
+              <a href='https://finvestec-gmbh.de/impressum' target='_blank' rel='noreferrer'>
+                Datenschutz
+              </a>{' '}
+              einverstanden
+            </div>
+          )}
         </div>
       </form>
     </div>
