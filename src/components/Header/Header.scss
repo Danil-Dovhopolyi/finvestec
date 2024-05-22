@@ -41,6 +41,10 @@
       align-items: center;
       justify-content: center;
       margin-right: 1.5rem;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
     }
 
     li:nth-child(1) {
@@ -58,11 +62,12 @@
 
   .kontakt {
     button {
-      width: 10.6rem;
+      padding: 0.6rem 2.9rem;
       border-radius: 3.6rem;
-      height: 3rem;
       border: 1px solid #2B2B4D;
       background: #FFFFFF66;
+      color: rgba(43, 43, 77, 1);
+      cursor: pointer;
     }
   }
 
@@ -119,6 +124,8 @@
     width: 100%;
     text-align: center;
     margin: 1rem 0;
+    cursor: pointer;
+
   }
 }
 
@@ -133,10 +140,7 @@
 
   .kontakt {
     button {
-      width: 6.1rem;
-      max-width: 6.1rem;
       border-radius: 3.6rem;
-      height: 3rem;
       border: 1px solid #2B2B4D;
       background: #FFFFFF66;
     }

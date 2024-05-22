@@ -39,9 +39,6 @@ export const App = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const whatWeOfferRef = useRef<HTMLDivElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    console.log('Tabs ref:', tabsRef.current); // Log the ref to check if it is pointing to the correct element
-  }, [tabsRef]);
   const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });

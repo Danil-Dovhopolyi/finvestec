@@ -115,12 +115,21 @@ body {
   display: none;
 }
 
-@media (width <= 1400px) {
+@media (width >= 1401px) {
   #root {
-    background-position: center;
     background-size: cover;
   }
+
+  .dots{
+    display: none;
+  }
+
+  .app{
+    max-width: 1366px;
+    margin: 0 auto;
+  }
 }
+
 
 @media (width <= 768px) {
   .app {
@@ -168,3 +177,4 @@ body {
     margin-bottom: 5.5rem;
   }
 }
+
