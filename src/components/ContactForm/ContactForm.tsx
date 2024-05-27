@@ -1,4 +1,5 @@
 import { forwardRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import { FormikProps, useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -19,7 +20,18 @@ interface FormValues {
 
 const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
-
+  const [isVerified, setIsVerified] = useState<boolean>(false);
+  function onChange(value: any) {
+    if (value) {
+      setIsVerified(true);
+    } else {
+      setIsVerified(false);
+    }
+  }
+  const areRequiredFieldsFilled = () => {
+    const { name, email, message } = formik.values;
+    return name && email && message;
+  };
   const formik: FormikProps<FormValues> = useFormik<FormValues>({
     initialValues: {
       name: '',
@@ -40,7 +52,11 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
         .required('Required'),
     }),
     onSubmit: async (values) => {
-      const API_KEY: string = 'sk_89b4a310bb64ea8f2d7bee4c084e6acca74144d2d65f9ce7'; // Replace with your actual Plunk API key
+      if (!isVerified) {
+        alert('Please complete the ReCAPTCHA');
+        return;
+      }
+      const API_KEY: string = 'sk_89b4a310bb64ea8f2d7bee4c084e6acca74144d2d65f9ce7';
 
       const emailHtml = render(<Email {...values} />);
 
@@ -104,7 +120,9 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <div className='error'>Sie müssen vor dem absenden der Datenschutzrichtlinie zustimmen</div>
+              <div className='error'>
+                Sie müssen vor dem absenden der Datenschutzrichtlinie zustimmen
+              </div>
             ) : null}
           </div>
 
@@ -171,6 +189,9 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
               <div className='error'>{formik.errors.privacyPolicy}</div>
             ) : null}
           </div>
+          {areRequiredFieldsFilled() && (
+            <ReCAPTCHA sitekey='6LfqrOkpAAAAAHapH4fHlcMNetd_UOEjGIZ-OQRE' onChange={onChange} />
+          )}
 
           <div className='button-group'>
             <button type='submit' className='submit-button'>
