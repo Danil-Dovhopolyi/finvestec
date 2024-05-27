@@ -27,9 +27,8 @@ function Footer() {
               <h4>Contact:</h4>
               <p>
                 0931/730 442 86
-                <br />
-                hello@finvestec-gmbh.de
               </p>
+              <p>hello@finvestec-gmbh.de</p>
               <div className='footer-social'>
                 <a href='https://www.linkedin.com' target='_blank' rel='noopener noreferrer'>
                   <img src={LinkedIn} alt='LinkedIn' />
@@ -40,11 +39,11 @@ function Footer() {
         </div>
         <div className='footer-bottom'>
           <div>
-            <p>&copy; 2024 Relume. All rights reserved.</p>
+            <p>&copy; 2024 Finvestec. All rights reserved.</p>
           </div>
           <div className='footer-link'>
             <a href='https://finvestec-gmbh.de/impressum' target='_blank' rel='noreferrer'>
-              Datenschutz and Impressum
+              Datenschutz und Impressum
             </a>
           </div>
         </div>

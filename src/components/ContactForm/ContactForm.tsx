@@ -104,12 +104,12 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <div className='error'>{formik.errors.email}</div>
+              <div className='error'>Sie müssen vor dem absenden der Datenschutzrichtlinie zustimmen</div>
             ) : null}
           </div>
 
           <div className='form-group'>
-            <label htmlFor='company'>Firma</label>
+            <label htmlFor='company'>Firma (optional)</label>
             <input
               id='company'
               name='company'
@@ -125,7 +125,7 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
           </div>
 
           <div className='form-group'>
-            <label htmlFor='phone'>Telefon</label>
+            <label htmlFor='phone'>Telefon (optional)</label>
             <input
               id='phone'
               name='phone'
@@ -165,7 +165,7 @@ const ContactForm = forwardRef<HTMLDivElement, {}>((_, ref) => {
                 checked={formik.values.privacyPolicy}
               />
               <span className='checkmark'></span>
-              <p>I agree to the Privacy Policy</p>
+              <p>Ich stimme der Datenschutzrichtlinie zu</p>
             </label>
             {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
               <div className='error'>{formik.errors.privacyPolicy}</div>

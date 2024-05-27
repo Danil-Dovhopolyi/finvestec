@@ -14,19 +14,18 @@
   z-index: 1000;
 
   .logo-content {
+    display: none;
+  }
+  .logo {
     width: 11.3rem;
     height: 3.4rem;
     max-width: 11.3rem;
     max-height: 3.4rem;
-
-    .logo {
-      img {
-        width: 100%;
-        height: 100%;
-      }
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
-
   nav {
     ul {
       display: flex;
@@ -45,6 +44,8 @@
       font-size: 18px;
       font-weight: 500;
       line-height: 27px;
+      color: #2A2A47;
+
     }
 
     li:nth-child(1) {
@@ -66,8 +67,12 @@
       border-radius: 3.6rem;
       border: 1px solid #2B2B4D;
       background: #FFFFFF66;
-      color: rgba(43, 43, 77, 1);
+      color: #2B2B4D;
       cursor: pointer;
+      font-family: Montserrat, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
     }
   }
 

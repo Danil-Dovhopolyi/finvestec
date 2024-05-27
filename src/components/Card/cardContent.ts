@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Check from '../../images/icons/Check.svg';
 import Copywriting from '../../images/icons/Copywriting.svg';
 import Email from '../../images/icons/Email.svg';
@@ -11,7 +13,7 @@ import SocialMedia from '../../images/icons/SocialMedia.svg';
 
 export interface ICard {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   icon: string;
 }
 
@@ -75,7 +77,7 @@ const cardData: CardData = {
     },
     {
       title: 'Office',
-      description: 'finvestec GmbH, Kister Str. 61, 97204 Höchberg, Germany',
+      description: 'finvestec GmbH, Kister Str. 61,\n97204 Höchberg, Germany',
       icon: Office,
     },
     {

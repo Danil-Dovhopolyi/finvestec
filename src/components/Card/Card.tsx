@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ICard } from '@/components/Card/cardContent.ts';
 
 import { CardContentStyle } from '../../types/types.ts';
@@ -24,7 +26,16 @@ function Card({
           <h3 className='card-title'>{title}</h3>
         </div>
 
-        <div className={`card-description ${contentStyle}`}>{description}</div>
+        <div className={`card-description ${contentStyle}`}>
+          {typeof description === 'string'
+            ? description.split('\n').map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))
+            : description}
+        </div>
       </div>
     </div>
   );
