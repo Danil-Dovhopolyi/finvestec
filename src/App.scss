@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 main{
-  padding-top: 120px;
+  padding: 120px 24px;
 }
 
 .dots {
@@ -136,9 +136,7 @@ main{
 
 
 @media (width <= 768px) {
-  .app {
-    padding: 0 24px;
-  }
+
 
   .title-content {
     font-size: 64px;
