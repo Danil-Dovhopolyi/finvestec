@@ -74,8 +74,8 @@ textarea {
 }
 
 .custom-checkbox .checkmark {
-  height: 20px;
-  width: 20px;
+  min-height:20px;
+  min-width: 20px;
   background-color: #eeeeee;
   border: 3px solid #00004A;
   border-radius: 50%;
@@ -159,6 +159,7 @@ textarea:focus {
   .contact-form {
     display: flex;
     flex-direction: column;
+    padding: 3rem 1rem;
   }
 
 }

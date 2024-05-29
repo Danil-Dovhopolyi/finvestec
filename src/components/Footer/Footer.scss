@@ -16,24 +16,27 @@
   padding: 2rem 6.25rem 5.125rem;
   display: flex;
   justify-content: space-between;
-
-  > div > p {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
+  > div > p{
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 21px;
-    color: rgba(49, 49, 60, 1);
+    line-height: 24px;
+    color: #484855;
+
+
   }
 
 
 }
 .footer-link{
   > a {
-    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 21px;
-    color: rgba(49, 49, 60, 1);
+    line-height: 24px;
     text-decoration: none;
+    color: #484855;
+
   }
 }
 

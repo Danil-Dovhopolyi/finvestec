@@ -51,8 +51,15 @@ export const tabData: TabContent[] = [
   },
   {
     title: 'Aktuelle Stellenangebote',
-    description: 'Content for Tab 2 will go here.',
-    paragraphs: [],
+    description: '',
+    paragraphs: [
+      {
+        title: 'Die passende Stelle ist nicht dabei?',
+        content: [
+          'Wir freuen uns auch jederzeit über Initiativbewerbungen an hello@finvestec-gmbh.de',
+        ],
+      },
+    ],
   },
 ];
 export default tabData;

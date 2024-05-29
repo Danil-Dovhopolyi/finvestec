@@ -59,48 +59,51 @@ export const App = () => {
           scrollToTabs={() => scrollToRef(tabsRef)}
           onMenuToggle={handleMenuToggle}
         />
-        <div className='dots dots-title'></div>
-        <div className='title'>
-          <h1 className='title-content'>Cutting Edge SEO</h1>
-        </div>
-        <div className='introduction'>
-          <div className='introduction-content'>
-            <div className='introduction-title'>
-              <span>
-                Wir betreiben qualitativ hochwertige Lead Generation Webseiten in den Bereichen
-                Finanzen, Kryptowährungen und Technologie im europäischen Raum.
-              </span>
-            </div>
-            <div>
-              <p>Unser Netzwerk zählt über 5 Millionen Besucher pro Monat.</p>
+
+        <main>
+          <div className='dots dots-title'></div>
+          <div className='title'>
+            <h1 className='title-content'>Cutting Edge SEO</h1>
+          </div>
+          <div className='introduction'>
+            <div className='introduction-content'>
+              <div className='introduction-title'>
+                <span>
+                  Wir betreiben qualitativ hochwertige Lead Generation Webseiten in den Bereichen
+                  Finanzen, Kryptowährungen und Technologie im europäischen Raum.
+                </span>
+              </div>
+              <div>
+                <p>Unser Netzwerk zählt über 5 Millionen Besucher pro Monat.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <About ref={aboutRef} />
-        <div className='dots'></div>
-        <WhatWeOffer ref={whatWeOfferRef} />
-        <div className='dots contacts-dots'></div>
-        <Contacts scrollToRef={() => scrollToRef(contactFormRef)} />
-        <Tabs ref={tabsRef}>
-          {tabData.map((tab: TabContent, index: number) => (
-            <Tab title={tab.title} key={index}>
-              <div className='content-wrap'>
-                <p className='tab-description'>{tab.description}</p>
-                {tab.paragraphs.map((paragraph, pIndex) => (
-                  <div key={pIndex} className='paragraph'>
-                    {paragraph.title && <h3 className='paragraph-title'>{paragraph.title}</h3>}
-                    {paragraph.content.map((content, cIndex) => (
-                      <li key={cIndex} className='paragraph-point'>
-                        {content}
-                      </li>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </Tab>
-          ))}
-        </Tabs>
-        <ContactForm ref={contactFormRef} />
+          <About ref={aboutRef} />
+          <div className='dots'></div>
+          <WhatWeOffer ref={whatWeOfferRef} />
+          <div className='dots contacts-dots'></div>
+          <Contacts scrollToRef={() => scrollToRef(contactFormRef)} />
+          <Tabs ref={tabsRef}>
+            {tabData.map((tab: TabContent, index: number) => (
+              <Tab title={tab.title} key={index}>
+                <div className='content-wrap'>
+                  <p className='tab-description'>{tab.description}</p>
+                  {tab.paragraphs.map((paragraph, pIndex) => (
+                    <div key={pIndex} className='paragraph'>
+                      {paragraph.title && <h3 className='paragraph-title'>{paragraph.title}</h3>}
+                      {paragraph.content.map((content, cIndex) => (
+                        <li key={cIndex} className='paragraph-point'>
+                          {content}
+                        </li>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </Tab>
+            ))}
+          </Tabs>
+          <ContactForm ref={contactFormRef} />
+        </main>
       </div>
       <CookiesPopup
         isVisible={isPopupVisible}
